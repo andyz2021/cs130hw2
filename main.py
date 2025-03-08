@@ -20,12 +20,12 @@ def simulateMetrics(latency=499, failure_rate=1):
 # set alert level based on latency and failure rate
 def setAlertLevel(latency, failure_rate):
     alert_level = -1
-    if latency > 500 or failure_rate > 2:
-        alert_level = 2
+    if latency > 2000 or failure_rate > 10:
+        alert_level = 0
     elif latency > 1000 or failure_rate > 5:
         alert_level = 1
-    elif latency > 2000 or failure_rate > 10:
-        alert_level = 0
+    elif latency > 500 or failure_rate > 2:
+        alert_level = 2
 
     return alert_level
 
